@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage{psfig}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.0in}
+\setlength{\headheight}{0in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\oddsidemargin}{-.5in}
+
+\input{preamble.tex}
+\begin{document}
+
+\lecture{5}{January 25, 2018}{Arpita Patra}{Pranshu Gaba}
+
+%%%% body goes in here %%%%
+
+\section{Introduction}
+
+In the last lecture, we looked at computational security. We made the definitions of PPT/negligible function precise in terms of security parameter \(n\). We looked at the semantic and the indistinguishability based definitions of security.
+
+Now we will look at the pseudorandomness and PRGs. We will find a construcction for ind-secure scheme. We will make use of reduction-based proofs to prove that if PRGs exist, then a construction is secure according to ind definition. Finally, we will discuss the short comings of the current construction/definition, and try to come up with a better defintion.  
+
+\section{Pseudorandom Generators (PRGs)}
+\(G\) is a PRG if for every PPT \(D\), there is a negligible function \negl\ such that
+
+\[ \lvert \mathrm{Pr}[D(r) = 1] - \mathrm{Pr} [D(G(s)) = 1] \rvert \le \mathsf{negl}(n) \]
+
+
+\section{PRG can be cracked by an unbounded adversary}
+
+\section{Existence of PRGs}
+We assume that PRGs exist. It has neither been proven, nor disproven, although it is strongly believed that they exist.
+
+\section{Stream Ciphers}
+%This is due to \cite{lamport94} \footnote{footnotes working fine}
+\section{One-way functions}
+Functions that are ``easy to compute'' but almost always ``difficult to invert''.
+
+\subsection{The Inverting Experiment}
+Experiment \(\mathsf{Invert}_{\mathcal{A},f} (n)\)
+
+
+\subsection{Mathematical Formulation}
+
+Function \(f\) is a {\sf one-way function}  if the following two conditions hold:
+\begin{itemize}
+\item Easy to compute: for every \(x \in \{0, 1\}^*\), \(f(x)\) can be computed in \poly \((n)\) time.
+\item Hard to invert: For every PPT algorithm \(A\), there is a negligible function \negl\((n)\) such that
+
+  \[ \mathrm{Pr}(\mathsf{Invert}_{\mathcal{A}, f} (n) = 1) \le \mathsf{negl}(n) \approx \mathrm{Pr} _{x \leftarrow \{ 0, 1\}^n} [A f(x), 1^n) \in f^{-1} (f(x))] \le \mathsf{negl}(n) \]
+\end{itemize}
+\section{Reduction-based Proofs}
+
+
+\begin{thebibliography}{9}
+
+\bibitem{lamport94}
+  Jonathan Katz, Yehuda Lindell,
+  \textit{Introduction to Modern Cryptography},
+  CRC Press, Taylor \& Francis Group,
+  2nd edition,
+  2015.
+  
+\end{thebibliography}
+
+
+
+
+\end{document}
